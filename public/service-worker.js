@@ -11,6 +11,11 @@ const PRECACHE_URLS = [
   '/public/service-worker.js',
   '/public/_redirects',
   // Ajoutez ici d'autres fichiers statiques ou assets si besoin
+  '/assets/index-HLPfRb6J.css',
+  '/assets/index-HxX_gya9.js',
+  '/assets/index.es-D8PF3V3o.js',
+  '/assets/html2canvas.esm-CBrSDip1.js',
+  '/assets/purify.es-CQJ0hv7W.js',
 ];
 
 
