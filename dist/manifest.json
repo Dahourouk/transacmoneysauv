@@ -1,7 +1,7 @@
 {
-  "name": "Mobile Money PWA Prototype",
-  "short_name": "MM PWA",
-  "description": "Prototype PWA pour enregistrements de transactions Mobile Money",
+  "name": "MobiLedger",
+  "short_name": "MobiLedger",
+  "description": "Le registre numérique du mobile money",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

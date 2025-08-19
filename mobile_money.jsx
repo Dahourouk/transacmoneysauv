@@ -1,15 +1,16 @@
 /*
-PWA Transaction Prototype (Option A)
-Fichier unique: PWA_Transaction_Prototype.jsx
+MobiLedger
+Le registre numérique du mobile money
+Fichier unique: MobiLedger.jsx
 Contenu: React component + IndexedDB wrapper + Service Worker registration instructions
 
 Instructions rapides:
 1. Crée une application React (Vite ou create-react-app).
-2. Place ce fichier en tant que src/App.jsx (ou adapte).
+2. Place ce fichier en tant que src/App.jsx ou mobile_money.jsx (ou adapte).
 3. Ajoute `public/service-worker.js` avec le contenu indiqué plus bas.
 4. Lancer `npm start`.
 
-Ce prototype stocke les transactions dans IndexedDB (hors-ligne) et propose une synchronisation manuelle.
+Cette application stocke les transactions Mobile Money dans IndexedDB (hors-ligne) et propose une synchronisation manuelle.
 */
 
 import React, { useEffect, useState } from 'react';

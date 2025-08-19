@@ -286,20 +286,12 @@ export default function App() {
       'CNIB/Passport': t.id_document,
       Téléphone: t.telephone,
       Montant: t.montant,
-      Statut: t.status
+      Statut: t.status,
     }));
   }
 
-  function timestamp() {
-    const d = new Date();
-    const pad = (n) => String(n).padStart(2, '0');
-    return `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
-  }
-
-  function exportExcel() {
-    if (!filteredTransactions.length) return showNotification('Aucune donnée à exporter.', 'warning');
-    const rows = buildExportRows(filteredTransactions);
-
+  function exportExcel(rows) {
+    if (!rows.length) return showNotification('Aucune donnée à exporter.', 'warning');
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet('Transactions');
     worksheet.columns = Object.keys(rows[0]).map(key => ({ header: key, key }));
@@ -430,8 +422,8 @@ export default function App() {
         <header className="header">
           <div className="header-content">
             <div>
-              <h1>Mobile Money — Enregistrements</h1>
-              <div className="header-subtitle">PWA Prototype avec stockage hors-ligne</div>
+              <h1>MobiLedger</h1>
+              <div className="header-subtitle">Le registre numérique du mobile money</div>
             </div>
             <div className="status-section">
               <button 
@@ -688,8 +680,9 @@ export default function App() {
 
         <footer className="footer">
           <p>
-            <strong>Prototype PWA</strong> — Stocke localement dans IndexedDB. 
-            Remplace <code>fakeSendToServer</code> par un appel réel à votre API.
+            Développé par <strong>Kevin Fadel Lassina DAHOUROU</strong><br />
+            Email : <a href="mailto:kevindahourou@yahoo.com">kevindahourou@yahoo.com</a><br />
+            Tél : <a href="tel:+22675061423" style={{ color: '#2563eb', textDecoration: 'underline' }}>+226 75 06 14 23</a>
           </p>
         </footer>
       </div>
