@@ -3,20 +3,34 @@ const CACHE_NAME = 'om-cache-v2';
 const PRECACHE_URLS = [
   '/',
   '/index.html',
-  '/main.jsx',
-  '/App.jsx',
-  '/mobile_money.jsx',
-  '/src/index.css',
-  '/public/manifest.json',
-  '/public/service-worker.js',
-  '/public/_redirects',
+  '/manifest.json',
+  '/service-worker.js',
   // Ajoutez ici d'autres fichiers statiques ou assets si besoin
-  '/assets/index-HLPfRb6J.css',
-  '/assets/index-HxX_gya9.js',
-  '/assets/index.es-D8PF3V3o.js',
-  '/assets/html2canvas.esm-CBrSDip1.js',
-  '/assets/purify.es-CQJ0hv7W.js',
 ];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(async cache => {
+        // Ajoute les fichiers essentiels
+        await cache.addAll(PRECACHE_URLS);
+        // Ajoute dynamiquement tous les fichiers du dossier /assets/
+        try {
+          const assets = [
+            '/assets/index-HLPfRb6J.css',
+            '/assets/index-xC-gB0Wc.js',
+            '/assets/index.es-D8PF3V3o.js',
+            '/assets/html2canvas.esm-CBrSDip1.js',
+            '/assets/purify.es-CQJ0hv7W.js',
+          ];
+          await cache.addAll(assets);
+        } catch (e) {
+          // Ignore les erreurs d'ajout d'assets
+        }
+      })
+      .then(() => self.skipWaiting())
+  );
+});
 
 
 self.addEventListener('install', (event) => {
