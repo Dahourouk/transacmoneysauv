@@ -3,14 +3,18 @@ const CACHE_NAME = 'om-cache-v2';
 const PRECACHE_URLS = [
   '/',
   '/index.html',
-  '/main.jsx',
-  '/App.jsx',
-  '/mobile_money.jsx',
-  '/src/index.css',
   '/manifest.json',
   '/service-worker.js',
   '/_redirects',
-  // Ajoutez ici d'autres fichiers statiques ou assets si besoin
+  // Fichiers générés par Vite
+  '/dist/index.html',
+  '/dist/manifest.json',
+  '/dist/service-worker.js',
+  '/dist/assets/index-HLPfRb6J.css',
+  '/dist/assets/index-HxX_gya9.js',
+  '/dist/assets/index.es-D8PF3V3o.js',
+  '/dist/assets/html2canvas.esm-CBrSDip1.js',
+  '/dist/assets/purify.es-CQJ0hv7W.js',
 ];
 
 
