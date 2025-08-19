@@ -3,28 +3,14 @@ const CACHE_NAME = 'om-cache-v2';
 const PRECACHE_URLS = [
   '/',
   '/index.html',
-  '/manifest.json',
-  '/service-worker.js',
-  '/_redirects',
-  // Fichiers générés par Vite (chemins racine)
-  '/assets/index-HLPfRb6J.css',
-  '/assets/index-HxX_gya9.js',
-  '/assets/index.es-D8PF3V3o.js',
-  '/assets/html2canvas.esm-CBrSDip1.js',
-  '/assets/purify.es-CQJ0hv7W.js',
-  // Fichiers dist
-  '/dist/index.html',
-  '/dist/manifest.json',
-  '/dist/service-worker.js',
-  // Fichiers sources
-  '/src/App.jsx',
+  '/main.jsx',
+  '/App.jsx',
+  '/mobile_money.jsx',
   '/src/index.css',
-  '/src/main.jsx',
-  // Fichiers publics
   '/public/manifest.json',
   '/public/service-worker.js',
-  // Fichier mobile_money
-  '/mobile_money.jsx',
+  '/public/_redirects',
+  // Ajoutez ici d'autres fichiers statiques ou assets si besoin
 ];
 
 
